@@ -10,9 +10,16 @@ public class Question {
 	 * @param answer
 	 * @param points
 	 */
+	private String prompt;
+	private String answer;
+	private int points;
+
 	public Question(String prompt, String answer, int points) {
-		throw new NotYetImplementedException();
+		this.prompt = prompt;
+		this.answer = answer;
+		this.points = points;
 	}
+	
 	
 	/**
 	 * Prints out the current question's prompt, with a parenthetical 
@@ -21,7 +28,6 @@ public class Question {
 	public void displayPrompt() {
 		System.out.println(this.prompt + "(" + this.points + " points)");
 	}
-	
 	/**
 	 * Check the answer provided by a user
 	 * @param givenAnswer
@@ -34,13 +40,13 @@ public class Question {
 			return 0;
 		}
 	}
-	
+
 	/**
 	 * Getter method for the points possible
 	 * @return int points
 	 */
 	public int getPoints() {
-		throw new NotYetImplementedException();
+		return this.points;
 	}
 	
 	/**
@@ -48,10 +54,13 @@ public class Question {
 	 * @return String answer
 	 */
 	public String getAnswer() {
-		throw new NotYetImplementedException();
+		return this.answer;
 	}
 	
 	public static void main(String[] args) {
 		// TODO: Create a Question object of your own!
+		Question q1 = new Question("What is 2+2?", "4", 5);
+		q1.displayPrompt();
+		System.out.println("Points earned: " + q1.checkAnswer("4"));
 	}
 }
